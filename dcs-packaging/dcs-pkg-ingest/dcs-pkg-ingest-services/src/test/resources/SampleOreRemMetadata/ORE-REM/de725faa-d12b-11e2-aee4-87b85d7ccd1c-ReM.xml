@@ -1,0 +1,45 @@
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" >
+            <!-- Resource Map (ReM) description -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/ORE-REM/de725faa-d12b-11e2-aee4-87b85d7ccd1c-ReM.xml">
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+                <ore:describes rdf:resource="urn:uuid:de725faa-d12b-11e2-aee4-87b85d7ccd1c"/>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:modified>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:created>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>Tim DiLauro</foaf:name>
+                    <foaf:mbox rdf:resource="mailto:timmo@jhu.edu"/>
+                </dcterms:creator>
+            </rdf:Description>
+            
+            <!-- Aggregation -->
+            <rdf:Description rdf:about="urn:uuid:de725faa-d12b-11e2-aee4-87b85d7ccd1c">
+                <!-- Aggregation Description -->
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+                <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Collection"/>
+                <dc:title>Lucassie Takatak</dc:title>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-07T01:55:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-07T01:55:00Z</dcterms:modified>
+                    
+                <!-- Aggregated Aggregations - Resource Component -->
+                <ore:aggregates rdf:resource="urn:uuid:e7b6cb09-2795-418d-967d-1802d7c0882a"/>
+                <ore:aggregates rdf:resource="urn:uuid:de726233-d12b-11e2-aee4-a0b4b916629f"/>
+                    
+                <!-- Aggregated Bytestreams -->                    
+                <!-- (none) -->
+            </rdf:Description>
+                
+            <!-- Aggregated Aggregations - ReM Component -->
+            <rdf:Description rdf:about="urn:uuid:e7b6cb09-2795-418d-967d-1802d7c0882a">
+                <ore:isDescribedBy rdf:resource="file:///ELOKA002.bag/ORE-REM/e7b6cb09-2795-418d-967d-1802d7c0882a-ReM.xml"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="urn:uuid:de726233-d12b-11e2-aee4-a0b4b916629f">
+                <ore:isDescribedBy rdf:resource="file:///ELOKA002.bag/ORE-REM/de726233-d12b-11e2-aee4-a0b4b916629f-ReM.xml"/>
+            </rdf:Description>
+                    
+            <!-- Bytestream Descriptions -->                    
+            <!-- (none) -->
+        </rdf:RDF>

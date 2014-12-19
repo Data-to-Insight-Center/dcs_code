@@ -1,0 +1,2365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<supplementalDataModels xmlns="http://maven.apache.org/supplemental-model/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/supplemental-model/1.0.0 http://maven.apache.org/xsd/supplemental-model-1.0.0.xsd">
+  
+  <!-- 
+    $Id: supplemental-models.xml 4463 2012-08-31 02:21:14Z emetsger $
+    $URL: https://scm.dataconservancy.org/svn/maven/supplemental-resources/src/main/resources/supplemental-models.xml $
+    
+    This file is used by the Maven Remote Resources Plugin (MRRP) to "supplement" POMs that have bad metadata.  
+    Any element of a POM can be supplemented by composing a <project> element below.  The <project> element
+    must have a <groupId>, <artifactId>, and a <version> so the MRRP can merge the original artifacts' POMs and their
+    supplemental models below.
+    
+    To date, this file is used to supplement missing <licenses> information and project <name>s.  It is also used
+    to normalize <organization> information, where some projects use "The Apache Software Foundation" or "Apache
+    Software Foundation" as the <organization>/<name> and "http://www.apache.org" or "http://www.apache.org/" as
+    the <organization>/<url>.
+    
+    This file is used as the basis for XSL transformations in other projects. See:
+      * supplemental-models-to-3rdparty.xsl: Transformation to the Codehaus licenses model (XML serialization)
+      * supplemental-models-to-licenses.xsl: Transformation to the Codehas 3rd party properties file
+      
+    This file is deployed as a resource bundle, so that each project in the Data Conservancy can use this file
+    for generating proper license documentation upon distribution and release.
+  -->
+  
+  <supplement>
+    <project>
+      <name>ANTLR Parser Generator</name>
+      <groupId>antlr</groupId>
+      <artifactId>antlr</artifactId>
+      <version>2.7.6</version>
+      <licenses>
+        <license>
+          <name>Antlr License</name>
+          <url>http://www.antlr2.org/license.html</url>
+          <distribution>repo</distribution>
+          <comments>
+            Manually added, April 15, 2011
+            Updated 8/30/12 - added URL
+          </comments>
+        </license>
+      </licenses>
+      <url>http://www.antlr.org/</url>
+    </project>    
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>AOP Alliance</name>
+      <groupId>aopalliance</groupId>
+      <artifactId>aopalliance</artifactId>
+      <version>1.0</version>
+      <licenses>
+        <license>
+          <name>Public Domain</name>
+          <url>http://aopalliance.sourceforge.net/</url>
+          <distribution>repo</distribution>
+          <comments>
+            Manually added, April 18, 2011
+            Updated 8/30/12 - added Organization
+          </comments>
+        </license>
+      </licenses>
+      <url>http://aopalliance.sourceforge.net/</url>
+      <organization>
+        <name>AOP Alliance</name>
+      </organization>
+    </project>
+  </supplement>
+
+  <supplement>
+    <project>
+      <name>ASM Bytecode Manipulation Library</name>
+      <groupId>asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>1.5.3</version>
+      <licenses>
+        <license>
+          <name>ASM License</name>
+          <url>http://asm.ow2.org/license.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>ASM Bytecode Manipulation Library</name>
+      <groupId>asm</groupId>
+      <artifactId>asm-attrs</artifactId>
+      <version>1.5.3</version>
+      <licenses>
+        <license>
+          <name>ASM License</name>
+          <url>http://asm.ow2.org/license.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Avalon</name>
+      <groupId>avalon-framework</groupId>
+      <artifactId>avalon-framework</artifactId>      
+      <version>4.1.3</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 1.1</name>
+          <url>http://www.apache.org/licenses/LICENSE-1.1</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <url>http://avalon.apache.org/</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Code Generation Library</name>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>2.1_3</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>International Components for Unicode</name>
+      <groupId>com.ibm.icu</groupId>  
+      <artifactId>icu4j</artifactId>
+      <version>3.4.4</version>
+      <licenses>
+        <license>
+          <name>ICU4J license</name>
+          <url>http://maven.dataconservancy.org/licenses/com.ibm.icu:icu4j:3.4.4.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>iText</name>
+      <groupId>com.lowagie</groupId>
+      <artifactId>itext</artifactId>
+      <version>1.3</version>
+      <licenses>
+        <license>
+          <name>AGPL</name>
+          <url>http://www.gnu.org/licenses/agpl.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Jersey: JSR 311 (JAX-RS) Reference Implementation</name>
+      <groupId>com.sun.jersey.contribs</groupId>
+      <artifactId>jersey-multipart</artifactId>
+      <version>1.3</version>
+      <licenses>
+        <license>
+          <name>Common Development and Distribution License, Version 1.1</name>
+          <url>http://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+        <license>
+          <name>GNU General Public License, Version 2 (with Oracle "classpath" exception)</name>
+          <url>http://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Jersey: JSR 311 (JAX-RS) Reference Implementation</name>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>1.3</version>
+      <licenses>
+        <license>
+          <name>Common Development and Distribution License, Version 1.1</name>
+          <url>http://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+        <license>
+          <name>GNU General Public License, Version 2 (with Oracle "classpath" exception)</name>
+          <url>http://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>    
+    <project>
+      <name>Jersey: JSR 311 (JAX-RS) Reference Implementation</name>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-core</artifactId>
+      <version>1.3</version>
+      <licenses>
+        <license>
+          <name>Common Development and Distribution License, Version 1.1</name>
+          <url>http://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+        <license>
+          <name>GNU General Public License, Version 2 (with Oracle "classpath" exception)</name>
+          <url>http://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Commons BeanUtils</name>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.7.0</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, Aug 30, 2012</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+    
+  <supplement>
+    <project>
+      <name>Apache Commons: Codec</name>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.2</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, Aug 30, 2012</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Codec</name>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.3</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Codec</name>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.4</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Codec</name>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.5</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Codec</name>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Collections</name>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 20, 2011</comments>
+        </license>
+      </licenses>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Collections</name>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.2.1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>  
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Logging</name>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <url>http://commons.apache.org/logging/</url>
+      <version>1.0.4</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>      
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Logging</name>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <url>http://commons.apache.org/logging/</url>
+      <version>1.1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 19, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Logging</name>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <url>http://commons.apache.org/logging/</url>
+      <version>1.1.1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>DOM4J</name>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.6.1</version>
+      <licenses>
+        <license>
+          <name>DOM4J BSD-style license</name>
+          <url>http://dom4j.sourceforge.net/dom4j-1.6.1/license.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>JavaMail 1.4</name>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-javamail_1.4_spec</artifactId>
+      <version>1.6</version>
+      <url>http://geronimo.apache.org/maven/specs/geronimo-javamail_1.4_spec/1.6</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Activation 1.1</name>      
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-activation_1.1_spec</artifactId>
+      <version>1.0.2</version>
+      <url>http://geronimo.apache.org/specs/geronimo-activation_1.1_spec</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Activation</name>      
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-activation_1.0.2_spec</artifactId>
+      <version>1.1</version>
+      <url>http://geronimo.apache.org/geronimo-activation_1.0.2_spec</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>JMS 1.1</name>      
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jms_1.1_spec</artifactId>
+      <version>1.1.1</version>
+      <url>http://geronimo.apache.org/specs/geronimo-jms_1.1_spec</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Streaming API for XML (STAX API 1.0)</name>      
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-stax-api_1.0_spec</artifactId>
+      <version>1.0.1</version>
+      <url>http://geronimo.apache.org/specs/geronimo-stax-api_1.0_spec</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+    
+  <supplement>
+    <project>
+      <name>ActiveIO :: Core</name>      
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activeio-core</artifactId>
+      <version>3.1.0</version>
+      <url>http://activemq.apache.org/activeio-core</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Camel :: Core</name>      
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-core</artifactId>
+      <version>1.5.0</version>
+      <url>http://apache.apache.org/camel/camel-core</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Google Web Toolkit</name>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-servlet</artifactId>
+      <version>2.0.4</version>
+      <organization>
+        <name>Google</name>
+        <url>http://www.google.com/</url>
+      </organization>
+    </project>
+  </supplement>
+    
+  <supplement>
+    <project>
+      <name>Jakarta Regexp</name>      
+      <groupId>jakarta-regexp</groupId>
+      <artifactId>jakarta-regexp</artifactId>
+      <version>1.4</version>
+      <url>http://jakarta.apache.org/regexp/</url>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Java Programming Assistant</name>
+      <groupId>javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>3.8.0.GA</version>
+      <licenses>
+        <license>
+          <name>Mozilla Public License, Version 1.1</name>
+          <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+          <distribution>repo</distribution>
+          <comments>
+            Manually added, April 15, 2011
+            Updated with URL, Organization, 8/30/12
+          </comments>
+        </license>
+      </licenses>
+      <url>http://www.javassist.org</url>      
+      <organization>
+        <name>JBoss</name>
+        <url>http://www.jboss.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>JavaBeans Activation Framework</name>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1</version>
+      <licenses>
+        <license>
+          <name>Common Development and Distribution License, Version 1.0</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.activation:activation:1.1.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>JavaBeans Activation Framework</name>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1.1</version>
+      <!--
+        TODO: Determine License
+      <licenses>
+        <license>
+          <name>Common Development and Distribution License, Version 1.0</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.activation:activation:1.1.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      -->
+      <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Java Message Service API</name>
+      <groupId>javax.jms</groupId>
+      <artifactId>jms</artifactId>
+      <version>1.1</version>
+      <licenses>
+        <license>
+          <name>Sun Binary Code License Agreement, JMS 1.1</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.jms:javax:1.1.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com</url>
+      </organization>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Java Servlet API</name>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.3</version>
+      <licenses>
+        <license>
+          <name>Sun Binary Code License Agreement, Servlet API 2.3</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.servlet:servlet-api:2.3.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Java Servlet API</name>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.4</version>
+      <licenses>
+        <license>
+          <name>Sun Binary Code License Agreement, Servlet API 2.4</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.servlet:servlet-api:2.4.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Java Servlet API</name>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <licenses>
+        <license>
+          <name>Sun Binary Code License Agreement, Servlet API 2.5</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.servlet:servlet-api:2.5.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Java Transaction API</name>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.1</version>
+      <licenses>
+        <license>
+          <name>Sun Binary Code License Agreement, Servlet API 2.5</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.transaction:jta:1.1.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>JavaMail</name>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+      <version>1.4</version>
+      <licenses>
+        <license>
+          <name>Common Development and Distribution License, Version 1.0</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.mail:mail:1.4.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
+      <version>1.1.1</version>
+      <licenses>
+        <license>
+          <name>Jaxen License</name>
+          <url>http://jaxen.org/license.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>LOG4J</name>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.12</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>LOG4J</name>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 20, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Logkit</name>
+      <groupId>logkit</groupId>
+      <artifactId>logkit</artifactId>
+      <version>1.0.1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 1.1</name>
+          <url>http://www.apache.org/licenses/LICENSE-1.1</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>EHCache</name>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>1.2.3</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <url>http://ehcache.org</url>
+      <organization>
+        <name>Terracotta, Inc.</name>
+        <url>http://terracotta.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Geronimo J2EE Specs</name>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-j2ee-management_1.0_spec</artifactId>
+      <version>1.0</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache HTTP Components: HTTP Client</name>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.0.1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache HTTP Components: HTTP Core</name>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>4.0.1</version>
+      <url>http://hc.apache.org/httpcomponents-core/</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 20, 2011</comments>
+        </license>
+      </licenses>
+    </project>    
+  </supplement>   
+  
+  <supplement>
+    <project>
+      <name>Apache HTTP Components: HTTP Core</name>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>4.2.1</version>
+      <url>http://hc.apache.org/httpcomponents-core/</url>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+    </project>    
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Enterprise Java Beans</name>
+      <groupId>org.hibernate</groupId>
+      <artifactId>ejb3-persistence</artifactId>
+      <version>1.0.1.GA</version>
+      <licenses>
+        <license>
+          <name>Sun Binary Code License Agreement, EJB 3.0</name>
+          <url>http://maven.dataconservancy.org/licenses/javax.persistence:persistence-api:3.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011.  Note this is Sun EJB 3.0 re-packaged and distributed by Hibernate.</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>Hibernate.org</name>
+        <url>http://hibernate.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Hibernate Annotations</name>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-annotations</artifactId>
+      <version>3.3.1.GA</version>
+      <organization>
+        <name>Hibernate.org</name>
+        <url>http://hibernate.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Hibernate Annotations</name>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-commons-annotations</artifactId>
+      <url>http://annotations.hibernate.org</url>
+      <version>3.3.0.ga</version>
+      <organization>
+        <name>Hibernate.org</name>
+        <url>http://hibernate.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>JDOM</name>
+      <groupId>org.jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>1.1</version>
+      <licenses>
+        <license>
+          <name>JDOM</name>
+          <url>https://github.com/hunterhacker/jdom/blob/master/LICENSE.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <url>http://www.jdom.org</url>
+      <organization>
+        <name>JDOM</name>
+        <url>http://www.jdom.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>MOD4J</name>
+      <groupId>org.mod4j.org.apache.commons</groupId>
+      <artifactId>logging</artifactId>
+      <version>1.0.4</version>
+      <licenses>
+        <license>
+          <name>Eclipse Public License, v1.0</name>
+          <url>http://opensource.org/licenses/eclipse-1.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: AOP</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+
+  <supplement>
+    <project>
+      <name>Spring Framework: AOP</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: AOP</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: ASM</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-asm</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: ASM</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-asm</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: ASM</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-asm</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>2.5.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Beans</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Beans</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Beans</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>      
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>2.5.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Context</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Context</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Context</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Context Support</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>2.5.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Core</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Core</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Core</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Expression</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Expression</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Expression</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: JMS</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: JMS</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: JMS</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>2.5.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: TX</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>3.0.2.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: TX</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: TX</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Web</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>2.0.6</version>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Web</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>2.5</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Web</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>2.5.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Web</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Web</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Spring Framework: Web</name>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>3.0.7.RELEASE</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>SpringSource</name>
+        <url>http://www.springsource.org</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>org.codehaus.woodstox</groupId>
+      <artifactId>wstx-asl</artifactId>
+      <version>3.2.6</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+        <license>
+          <name>GNU Lesser General Public License, Version 2.1</name>
+          <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Woodstox</name>
+      <groupId>org.codehaus.woodstox</groupId>
+      <artifactId>wstx-asl</artifactId>
+      <version>3.2.7</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+        <license>
+          <name>GNU Lesser General Public License, Version 2.1</name>
+          <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Woodstox</name>
+      <groupId>woodstox</groupId>
+      <artifactId>wstx-asl</artifactId>
+      <version>3.2.7</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+        <license>
+          <name>GNU Lesser General Public License, Version 2.1</name>
+          <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 15, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.6.2</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 1.1</name>
+          <url>http://www.apache.org/licenses/LICENSE-1.1</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Xerces</name>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.9.1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache XML Commons: XML APIs</name>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>1.0.b2</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 1.1</name>
+          <url>http://www.apache.org/licenses/LICENSE-1.1</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache XML Commons: XML APIs</name>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>1.3.02</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 18, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>  
+  
+  <supplement>
+    <project>
+      <name>HttpClient</name>
+      <url>http://jakarta.apache.org/httpcomponents/httpclient-3.x/</url>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 20, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>HttpClient</name>
+      <url>http://jakarta.apache.org/httpcomponents/httpclient-3.x/</url>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.1-rc1</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, April 20, 2011</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>HttpClient</name>
+      <url>http://jakarta.apache.org/httpcomponents/httpclient-3.x/</url>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>20020423</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>Manually added, August 30, 2012</comments>
+        </license>
+      </licenses>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Collections</name>
+      <url>http://commons.apache.org/collections/commons-collections</url>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.1</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: Collections</name>
+      <url>http://commons.apache.org/collections/commons-collections</url>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.2.1</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Apache Commons: FileUpload</name>
+      <url>http://jakarta.apache.org/commons/fileupload/</url>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.2</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+    
+  <supplement>
+    <project>
+      <name>Abdera Client</name>
+      <url>http://abdera.apache.org/abdera-client</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-client</artifactId>
+      <version>1.0</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera Core</name>
+      <url>http://abdera.apache.org/abdera-core</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-core</artifactId>
+      <version>1.1</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera Core</name>
+      <url>http://abdera.apache.org/abdera-core</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-core</artifactId>
+      <version>1.1.2</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera Core</name>
+      <url>http://abdera.apache.org/abdera-core</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-core</artifactId>
+      <version>1.0</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+
+  <supplement>
+    <project>
+      <name>Abdera I18N Libraries</name>
+      <url>http://abdera.apache.org</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-i18n</artifactId>
+      <version>1.1</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera I18N Libraries</name>
+      <url>http://abdera.apache.org</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-i18n</artifactId>
+      <version>1.1.2</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera I18N Libraries</name>
+      <url>http://abdera.apache.org</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-i18n</artifactId>
+      <version>1.0</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera Parser</name>
+      <url>http://abdera.apache.org/abdera-parser</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-parser</artifactId>
+      <version>1.1</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera Parser</name>
+      <url>http://abdera.apache.org/abdera-parser</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-parser</artifactId>
+      <version>1.0</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera Server</name>
+      <url>http://abdera.apache.org/abdera-server</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-server</artifactId>
+      <version>1.0</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  <supplement>
+    <project>
+      <name>Abdera Spring Integration</name>
+      <url>http://abdera.apache.org/abdera-spring</url>
+      <groupId>org.apache.abdera</groupId>
+      <artifactId>abdera-spring</artifactId>
+      <version>1.0</version>
+      <organization>
+        <name>The Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+      </organization>
+    </project>
+  </supplement>
+  
+  
+  
+</supplementalDataModels>

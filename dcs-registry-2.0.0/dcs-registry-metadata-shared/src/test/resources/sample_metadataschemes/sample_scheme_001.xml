@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2012 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<dcp xmlns="http://dataconservancy.org/schemas/dcp/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://dataconservancy.org/schemas/dcp/1.0 http://dataconservancy.org/schemas/dcp/1.0">
+  <DeliverableUnits>
+    <DeliverableUnit id="0">
+      <type>dataconservancy.types:registry-entry:metadatascheme</type>
+      <title>Some Scheme Name</title>
+      <formerExternalRef>http://www.google.com</formerExternalRef>
+    </DeliverableUnit>
+  </DeliverableUnits>
+  <Manifestations>
+    <Manifestation id="2">
+      <deliverableUnit ref="0"/>
+      <type>SchemeFileManifestation</type>
+      <technicalEnvironment>dataconservancy.types:registry-entry:metadatascheme:1.0</technicalEnvironment>
+      <manifestationFile ref="1">
+        <path>/</path>
+      </manifestationFile>
+    </Manifestation>
+    <Manifestation id="4">
+      <deliverableUnit ref="0"/>
+      <type>SchemeSerializationManifestation</type>
+      <technicalEnvironment>dataconservancy.types:registry-entry:metadatascheme:1.0</technicalEnvironment>
+      <manifestationFile ref="3">
+        <path>/</path>
+      </manifestationFile>
+    </Manifestation>
+  </Manifestations>
+  <Files>
+    <File id="1" src="http://dataconservancy.org/datastream/1234">
+      <fileName>schema-source</fileName>
+      <extant>true</extant>
+    </File>
+    <File id="3" src="http://dataconservancy.org/datastream/5678">
+      <fileName>java-scheme-serialization</fileName>
+      <extant>true</extant>
+      <format>
+        <id scheme="http://www.iana.org/assignments/media-types/">application/xml</id>
+      </format>
+    </File>
+  </Files>
+</dcp>

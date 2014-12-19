@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2013 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+  <!--
+    Stateful Ingest Service implementations
+
+    Each StatefulIngestService should have a corresponding Spring Bean definition.
+  -->
+
+  <bean class="org.dataconservancy.packaging.ingest.services.PackageFileAnalyzer">
+    <property name="checksumGenerator" ref="org.dataconservancy.dcs.util.ChecksumGeneratorVerifier"/>
+    <property name="contentDetectionService"
+              ref="org.dataconservancy.dcs.contentdetection.impl.droid.DroidContentDetectionServiceImpl"/>
+  </bean>
+
+  <bean class="org.dataconservancy.packaging.ingest.services.PackageFileChecksumVerifier"/>
+
+  <bean class="org.dataconservancy.packaging.ingest.services.RDFXMLSyntaxChecker"/>
+
+  <bean class="org.dataconservancy.packaging.ingest.services.OrphanResourceChecker"/>
+
+  <bean class="org.dataconservancy.packaging.ingest.services.PayloadFileFormatVerifier" />
+  
+  <bean class="org.dataconservancy.packaging.ingest.services.BagItPackageValidator" />
+  
+  <bean class="org.dataconservancy.packaging.ingest.services.PackageMetadataExtractor">
+    <property name="metadataObjectBuilder" ref="packageMetadataObjectBuilder"/>
+  </bean>
+
+  <bean class="org.dataconservancy.packaging.ingest.services.ResourceMapMetadataExtractor" />
+
+  <bean class="org.dataconservancy.packaging.ingest.services.UniqueIdentifierVerificationService"/>
+  
+  <bean class="org.dataconservancy.packaging.ingest.services.InternalReferenceChecker"/>
+  
+  <bean id="packageMetadataObjectBuilder" class="org.dataconservancy.mhf.model.builder.xstream.XstreamMetadataObjectBuilder">
+      <constructor-arg ref="packagingXstream"/>
+  </bean> 
+
+  <bean id="packagingXstream" class="com.thoughtworks.xstream.XStream"/>
+
+  <bean id="structureExtractDirectory" class="java.io.File">
+    	<constructor-arg value="${dcs.ui.package.extraction.directory}"/>
+  </bean>
+
+  <bean class="org.dataconservancy.packaging.ingest.services.BagStructureCheck">
+    <property name="extractDir" ref="structureExtractDirectory"/>
+  </bean>
+
+  <!-- Bootstrap configuration -->
+
+  <!-- The ExecutorService used to run the ingest services -->
+  <bean id="packageBoundedBlockingThreadPoolExecutor"
+    class="org.dataconservancy.dcs.util.BoundedBlockingPoolExecutor"
+    factory-method="getInstance" destroy-method="shutdown">
+    <constructor-arg value="4" />
+  </bean>
+
+  <!--
+    Phase One Ingest Services
+      See the ingest workflow table for reference:
+       - https://scm.dataconservancy.org/confluence/x/R4Hz#PackageIngestWorkflowDCS-UC-3558-WorkflowTable
+
+      Ingest is comprised of two phases, which are separated by a interactive user confirmation screen. In the first
+      phase we build a graph of business objects to deposit.  The user is presented with a confirmation screen.  The
+      second phase of ingest is kicked off when the user confirms the deposit.
+
+      The ingest services should be configured in the order they are meant to execute, according to the workflow table.
+  -->
+
+  <util:list id="phaseOneIngestServices">
+    <!-- 'Robin' (DC-1425), 'Sparrow' (DC-1428), and 'Bluejay' (DC-1428) workflow steps are implemented in the
+          IngestPackageActionBean, BagItDepositManagerImpl, and BagStructureCheck -->
+
+    <!-- Helps with Bluejay (DC-1428).  Insures that there is a proper base directory for the bag, and insures
+         that the 'data/' directory and 'bagit.txt' file are in the proper place, and exist. -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.BagStructureCheck"/>
+
+    <!-- Simply uncomment and copy and paste this bean definition any number of times, anywhere in any ingest phase.
+         It will output (at minimum) the toString() of the components in IngestWorkflowState to the Logger at
+         INFO level.  As components are added to IngestWorkflowState, DumpStateService will need to be updated. -->
+    <!--bean class="org.dataconservancy.packaging.ingest.services.DumpStateService"/-->
+    
+    <!-- 'Parrot' workflow step, DC-1433 -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.PackageFileAnalyzer"/>
+   
+    <!-- 'Chickadee' workflow step, DC-1434 -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.PackageMetadataExtractor"/>
+    
+    <!-- 'Dove' workflow step, DC-1436 -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.BagItPackageValidator"/>
+
+    <!-- 'Cardinal' workflow step, DC-1439 -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.RDFXMLSyntaxChecker"/>
+
+    <!-- Goose workflow step, DC-1440.  Because this service operates on RDF and doesn't do any interpretation of
+         the RDF as ORE, it executes ahead of the other Goose ingest services. -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.OrphanResourceChecker"/>
+
+    <!-- Falcon work flow step, card DC-1438 -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.PackageFileChecksumVerifier"/>
+
+    <!-- Manakin work flow step, card DC-1435 
+    This service is commented out until the issue with ORE-REM dir is resolved.-->
+    <ref bean="org.dataconservancy.packaging.ingest.services.ResourceMapMetadataExtractor"/>
+    
+    <!-- Goose workflow step. DC-1440 -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.UniqueIdentifierVerificationService"/>
+    <ref bean="org.dataconservancy.packaging.ingest.services.InternalReferenceChecker"/>
+    <bean class="org.dataconservancy.packaging.ingest.services.RelationshipCardinalityVerificationService"/>
+    <bean class="org.dataconservancy.packaging.ingest.services.OreRelationshipTypeChecker"/>
+    <bean class="org.dataconservancy.packaging.ingest.services.OreRelationshipConstraintChecker"/>
+
+    <!-- 'Falcon' workflow step. DC-1441. 
+    This service shouldn't be ran until service to extract and provide ORE-ReM-File AttributeSets is working -->
+    <ref bean="org.dataconservancy.packaging.ingest.services.PayloadFileFormatVerifier"/>    
+  </util:list>
+
+  <bean id="phaseOne" class="org.dataconservancy.packaging.ingest.services.IngestPhaseImpl">
+    <constructor-arg value="1000"/>
+    <constructor-arg value="false"/>
+  </bean>
+  <!--
+    Bootstrap implementation bean definition
+
+     The bootstrapper can be configured with an arbitrary number of phases.  Simply add a phase with the ingest
+     services to the map.  The key of the map is what determines the order of the ingest phases.
+  -->
+  <bean id="packageIngestBootstrap" class="org.dataconservancy.packaging.ingest.services.StatefulBootstrapImpl">
+    <property name="executorService" ref="packageBoundedBlockingThreadPoolExecutor"/>
+    <property name="ingestServicesMap">
+      <util:map map-class="java.util.TreeMap">
+        <entry key-ref="phaseOne" value-ref="phaseOneIngestServices"/>
+      </util:map>
+    </property>
+  </bean>
+
+</beans>

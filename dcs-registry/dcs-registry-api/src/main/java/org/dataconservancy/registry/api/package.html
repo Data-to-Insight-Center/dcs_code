@@ -1,0 +1,42 @@
+<!--
+  ~ Copyright 2012 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<body bgcolor="white">
+
+Data Conservancy Registry Framework API
+
+<h2>Summary</h2>
+
+<p>
+    The design goal of the Data Conservancy Registry Framework is to provide a generic approach for creating, managing,
+    and querying registries within a Data Conservancy instance.  Currently the Framework supplies implementations
+    supporting query operations, but registry creation and management interfaces are not defined or implemented.</p>
+<p>
+    For the purposes of this Framework, a Registry is considered to be a bucket of identifiable objects that serve a
+    common purpose or domain of interest.  This Framework explicitly designs and accounts for the existence of multiple
+    Registries that service different domains.  For example, an instance of the Data Conservancy may have a
+    Format Registry, a Data License Registry, and a Transformation Registry, just to name a few.</p>
+<p>
+    Each {@link org.dataconservancy.registry.api.Registry Registry} provides access to domain objects by their
+    identifier, or by enumerating the contents of the registry using a subset of the Java Collections Framework
+    <code>Map</code> API.  {@link org.dataconservancy.registry.api.support.RegistryEntry Entries} in the <code>Registry</code>
+    wrap domain objects, and provide access to the entry's identifier, and human-readable name.</p>
+
+<!-- Put @see and @since tags down here. -->
+
+</body>
+</html>

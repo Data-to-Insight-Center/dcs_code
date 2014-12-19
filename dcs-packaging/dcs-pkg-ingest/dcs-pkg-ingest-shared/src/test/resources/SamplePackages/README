@@ -1,0 +1,15 @@
+These are sample bags that can be used for testing. 
+
+Sample Bag : This is a complete bag that should be kept in good working order it should result in a successful ingest. Currently points to a project with id http://localhost:8080/project/1 will need to be updated to match project in the system.
+
+invalid_rem_location_bag : This bag has the rem location listed as relative instead of absolute in bag-info, which is wrong according to the spec. This bag should fail ore-rem validation.
+
+minbag: This a bag having only minimal elements. It contains a package, project, collection, and a data item with a single file. Only required metadata is present. Currently points to a project with id http://localhost:8080/project/1 will need to be updated to match project in the system.
+
+sharebag: This bag is invalid because two collections attempt to include the same data item.
+
+rem-contains-missing-file: This is bag is invalid because the rem aggrigates a file that is not in the payload.
+
+minbag-missing-collection-title: This is a bag that's missing a dc:title in it's rem description. It will fail in the business object validator service.
+
+minbag-missing-file-title: This is a bag that's missing an ore-rem description for the aggregated bytestream. It will fail in the busines object validator service. 

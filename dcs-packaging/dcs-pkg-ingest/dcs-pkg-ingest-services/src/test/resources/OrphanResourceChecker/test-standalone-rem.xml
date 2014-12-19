@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+  xmlns:owl="http://www.w3.org/2002/07/owl#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:dcterms="http://purl.org/dc/terms/" 
+  xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+  xmlns:ore="http://www.openarchives.org/ore/terms/" 
+  xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" 
+  xmlns:datacons="http://example.com/datacons/"
+  xmlns:dcmitype="http://purl.org/dc/terms/dcmitype/">
+  
+  <!-- 
+    A simple ReM that is composed of a single file (it doesn't include any other resource 
+    maps using <ore:isDescribedBy rdf:about="file:///path/to/another/rem"/>).
+    
+    The ReM description (urn:uuid:1) describes the ORE aggregation (urn:uuid:2).
+    
+    The Resource (urn:uuid:4) is an ORE aggregation that is not an object of any statement,
+    and is therefore an "orphan".    
+  -->
+  
+  <!-- Resource Map (ReM) description -->
+  <rdf:Description rdf:about="urn:uuid:1">
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+    <dc:title>Resource Map Description</dc:title>
+    <ore:describes rdf:resource="urn:uuid:2"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T09:32:18Z</dcterms:modified>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T09:32:18Z</dcterms:created>
+    <dcterms:creator rdf:parseType="Resource">
+      <foaf:name>Elliot Metsger</foaf:name>
+      <foaf:mbox rdf:resource="mailto:dc-ird@googlegroups.com"/>
+    </dcterms:creator>
+  </rdf:Description>
+  
+  <!-- Aggregation -->
+  <rdf:Description rdf:about="urn:uuid:2">
+    <!-- Aggregation Description -->
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+    <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Collection"/>
+    <dc:title>Sample Aggregation</dc:title>
+    <dcterms:creator rdf:parseType="Resource">
+      <foaf:name>Data Conservancy</foaf:name>
+      <foaf:page rdf:resource="http://dataconservancy.org/"/>
+    </dcterms:creator>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T11:26Z</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T11:26Z</dcterms:modified>        
+  </rdf:Description>
+    
+  <!-- A resource that isn't joined up to the graph -->
+  <rdf:Description rdf:about="urn:uuid:4">
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+    <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Collection"/>
+    <dc:title>Orphaned Aggregation</dc:title>
+    <dcterms:creator rdf:parseType="Resource">
+      <foaf:name>Data Conservancy</foaf:name>
+      <foaf:page rdf:resource="http://dataconservancy.org/"/>
+    </dcterms:creator>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T11:26Z</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T11:26Z</dcterms:modified>    
+  </rdf:Description>
+  
+</rdf:RDF>

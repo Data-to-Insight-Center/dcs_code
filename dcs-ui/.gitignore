@@ -1,0 +1,12 @@
+target/
+*.iws
+*.ipr
+*.iml
+*.log
+.classpath
+.project
+.settings/
+SampleFilePackages/
+overlays/
+*.sh
+atlassian*

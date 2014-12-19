@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2012 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<dcp xmlns="http://dataconservancy.org/schemas/dcp/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://dataconservancy.org/schemas/dcp/1.0 http://dataconservancy.org/schemas/dcp/1.0">
+  <DeliverableUnits>
+    <DeliverableUnit id="664d0819-f1fe-4e8c-ae04-5cc9fb4bc45c">
+      <type>dataconservancy:types:registry-entry:license</type>
+      <title>Attribution-NonCommercial-ShareAlike 3.0 Unported</title>
+      <formerExternalRef>http://creativecommons.org/licenses/by-nc-sa/3.0/</formerExternalRef>
+      <digitalSurrogate>false</digitalSurrogate>
+    </DeliverableUnit>
+  </DeliverableUnits>
+  <Manifestations>
+    <Manifestation id="459e1d79-a137-4825-8df1-2696b2177aac" dateCreated="2011-08-04T21:08:42.346Z">
+      <deliverableUnit ref="664d0819-f1fe-4e8c-ae04-5cc9fb4bc45c"/>
+      <technicalEnvironment>DCS Data Model http://dataconservancy.org/schemas/dcp/1.0</technicalEnvironment>
+      <technicalEnvironment>XStream 1.3.1</technicalEnvironment>
+      <technicalEnvironment>Java Version: 1.6.0_26-b03-383-11A511</technicalEnvironment>
+      <manifestationFile ref="08981f34-7e84-4d17-9fec-b85d0c3e34f1">
+        <path>/</path>
+      </manifestationFile>
+    </Manifestation>
+  </Manifestations>
+  <Files>
+    <File id="08981f34-7e84-4d17-9fec-b85d0c3e34f1"
+      src="serialized_license.xml">
+      <fileName>java-entry-serialization</fileName>
+      <extant>true</extant>
+      <size>508</size>
+      <fixity algorithm="SHA-1">28bfc934a8bb1dbe1fdd58936f78dda8437c293</fixity>
+      <fixity algorithm="MD5">4e84db34bed611d07157d5c7d82548a</fixity>
+      <format>
+        <id scheme="http://www.iana.org/assignments/media-types/">application/xml</id>
+      </format>
+    </File>
+  </Files>
+</dcp>

@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright 2012 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<org.dataconservancy.registry.impl.license.shared.DcsLicense>
+  <name>Attribution-NonCommercial-ShareAlike 3.0 Unported</name>
+  <tag>CC BY-NC-SA 3.0</tag>
+  <version>3.0</version>
+  <summary>This is the summary of the license.</summary>
+  <fullText>This is the full text of the license.</fullText>
+  <uris>
+    <java.net.URI serialization="custom">
+      <java.net.URI>
+        <default>
+          <string>http://creativecommons.org/licenses/by-nc-sa/3.0/</string>
+        </default>
+      </java.net.URI>
+    </java.net.URI>
+  </uris>
+</org.dataconservancy.registry.impl.license.shared.DcsLicense>

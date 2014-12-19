@@ -1,0 +1,83 @@
+<!--
+  ~ Copyright 2013 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<body bgcolor="white">
+
+Provides utility classes for examining a Data Conservancy Package, and determining whether
+or not the package conforms to a profile.
+
+
+<h2>Summary</h2>
+
+<p>
+    {@link org.dataconservancy.registry.profile.support.ProfileStatement ProfileStatement}s are the
+    foundation of a profile.  A statement consists of a String and a {@link org.dataconservancy.registry.profile.support.MatchOp match operator}.
+    Statements are then evaluated against candidate Strings using the supplied comparison operator.
+</p>
+
+<p>
+    A single statement can be evaluated against a single string, or against a collection of strings.  If the
+    statement is being evaluated against a collection of strings, a {@link org.dataconservancy.registry.profile.support.CollectionMatchStrategy matching strategy}
+    must be provided.  The strategy is used to determine how many, if any, candidate strings in the collection must be matched.
+</p>
+
+<p>
+    Note that the Feature Extraction Framework has done some {@link org.dataconservancy.transform.profile work} with
+    profiles.  It may be instructive and/or practical to reconcile these two approaches in the future.
+</p>
+
+<h2>Example Usage</h2>
+<p>
+<pre>
+    public class LicenceRegistryEntryProfile {
+
+        private ProfileStatement duType;       // injected
+        private Set&lt;ProfileStatement> techEnv; // injected
+
+        public boolean conforms(Dcp package) {
+
+            DcsDeliverableUnit du = ...;  // extracted from package
+
+            if (!duType.evaluate(du.getType())) {
+                log.debug("Deliverable Unit does not conform to a license registry entry");
+                return false;
+            }
+
+            ...
+
+            boolean conforms = true;
+
+            for (DcsManifestation candidateManifestation : du.getManifestations()) {
+                for (ProfileStatement statement : techEnv) {
+                    conforms &= statement.evaluate(candidateManifestation.getTechicalEnvironment(),
+                                    CollectionMatchStrategy.AT_LEAST_ONE);
+                }
+                if (conforms) return;
+            }
+
+            ...
+
+            return conforms;
+        }
+    }
+</pre>
+</p>
+<!-- Put @see and @since tags down here. -->
+@see org.dataconservancy.transform.profile Feature Extraction Profiles
+
+</body>
+</html>

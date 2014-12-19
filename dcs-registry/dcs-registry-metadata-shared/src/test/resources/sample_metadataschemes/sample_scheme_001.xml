@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcp xmlns="http://dataconservancy.org/schemas/dcp/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://dataconservancy.org/schemas/dcp/1.0 http://dataconservancy.org/schemas/dcp/1.0">
+  <DeliverableUnits>
+    <DeliverableUnit id="0">
+      <type>dataconservancy.types:registry-entry:metadatascheme</type>
+      <title>Some Scheme Name</title>
+      <formerExternalRef>http://www.google.com</formerExternalRef>
+    </DeliverableUnit>
+  </DeliverableUnits>
+  <Manifestations>
+    <Manifestation id="2">
+      <deliverableUnit ref="0"/>
+      <technicalEnvironment>dataconservancy.types:registry-entry:metadatascheme:1.0</technicalEnvironment>
+      <manifestationFile ref="1">
+        <path>/</path>
+      </manifestationFile>
+    </Manifestation>
+  </Manifestations>
+  <Files>
+    <File id="1" src="http://dataconservancy.org/datastream/1234">
+      <fileName>schema-source</fileName>
+      <extant>false</extant>
+    </File>
+  </Files>
+</dcp>

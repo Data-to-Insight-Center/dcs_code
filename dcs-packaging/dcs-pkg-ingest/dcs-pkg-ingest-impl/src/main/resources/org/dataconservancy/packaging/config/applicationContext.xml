@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2013 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <bean id="packageIngestPlaceholderConfig"
+                class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+      <property name="ignoreUnresolvablePlaceholders" value="true"/>
+      <property name="ignoreResourceNotFound" value="true"/>
+      <property name="locations">
+        <list>
+          <value>classpath:pkg.properties</value>
+        </list>
+      </property>
+   </bean>
+
+  <!--
+   | The id service in use.  Typically test environments will define an in-memory implementation, while
+   | production will define an implementation backed by the Data Conservancy.
+   +-->
+  <alias name="${dcs.pkg.event.idService}" alias="eventManagerIdService"/>
+  <bean id="inMemoryIdService" class="org.dataconservancy.dcs.id.impl.MemoryIdServiceImpl"/>
+
+  <!-- Manages the state associated with a deposit workflow -->
+  <bean id="packageIngestDepositStateManager" class="org.dataconservancy.packaging.ingest.impl.InMemoryDepositStateManager"/>
+
+  <!-- Responsible for generating a new instance of IngestWorkflowState for each deposit workflow -->
+  <bean id="packageIngestWorkflowStateFactory"
+        class="org.dataconservancy.packaging.ingest.impl.SpringAwareIngestWorkflowStateFactory">
+    <property name="ingestWorkflowStateBeanName" value="packageIngestWorkflowState"/>
+  </bean>
+
+  <!-- Responsible for producing summary report about the ingest process prior to the actual ingestion of business objects
+    | into the archive.
+    +-->
+  <bean id="preIngestReportService" class="org.dataconservancy.packaging.ingest.impl.PackagePreIngestReportService">
+     <property name="ingestReportBuilder" ref="ingestReportBuilder"/>
+  </bean>
+
+  <bean id="ingestReportBuilder" class="org.dataconservancy.reporting.model.builder.xstream.XstreamIngestReportBuilder"/>
+  <!--
+    Prototype-scoped beans that are instantiated for each deposit workflow by the SpringAwareIngestWorkflowStateFactory
+  -->
+  <bean id="packageIngestEventManager" class="org.dataconservancy.packaging.ingest.impl.InMemoryEventManager"
+        scope="prototype">
+    <property name="idService" ref="eventManagerIdService"/>
+  </bean>
+
+  <bean id="packageIngestAttributeSetManager" class="org.dataconservancy.packaging.ingest.shared.AttributeSetManagerImpl"
+            scope="prototype"/>
+
+    <bean id="packageIngestBusinessObjectManager" class="org.dataconservancy.packaging.ingest.impl.BusinessObjectManagerImpl"
+            scope="prototype"/>
+
+  <bean id="packageIngestWorkflowState" class="org.dataconservancy.packaging.ingest.impl.IngestWorkflowStateImpl"
+        scope="prototype">
+    <property name="attributeSetManager" ref="packageIngestAttributeSetManager"/>
+    <property name="businessObjectManager" ref="packageIngestBusinessObjectManager"/>
+    <property name="eventManager" ref="packageIngestEventManager"/>
+    <property name="package" ref="packageModel"/>
+  </bean>
+
+</beans>

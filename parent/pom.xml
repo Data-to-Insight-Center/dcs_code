@@ -1,0 +1,204 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- 
+    $Id: pom.xml 4471 2012-08-31 14:53:44Z birkland $
+    $URL: https://scm.dataconservancy.org/svn/maven/parent/trunk/pom.xml $
+  -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.dataconservancy</groupId>
+  <artifactId>parent-pom</artifactId>
+  <packaging>pom</packaging>
+  <name>Data Conservancy Parent POM</name>
+  <description>Maven 2 parent POM for the Data Conservancy</description>
+
+  <version>1.0.3-SNAPSHOT</version>
+
+  <organization>
+    <name>Data Conservancy</name>
+    <url>http://dataconservancy.org</url>
+  </organization>
+  <inceptionYear>2010</inceptionYear>
+  
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <profiles>
+    <profile>
+      <id>stage</id>
+      <properties>
+        <svn.base>https://scm.dataconservancy.org/svn-stage</svn.base>
+      </properties>
+    </profile>
+  </profiles>
+  
+  <properties>
+    <svn.base>https://scm.dataconservancy.org/svn</svn.base>
+  </properties>
+
+
+  <!-- Repositories and Distribution ======================================= -->
+
+  <scm>
+    <connection>scm:svn:${svn.base}/maven/parent/trunk</connection>
+    <developerConnection>scm:svn:${svn.base}/maven/parent/trunk</developerConnection>
+    <url>https://scm.dataconservancy.org/svn/maven/parent/trunk</url>
+  </scm>
+
+  <repositories>
+
+    <repository>
+      <id>dc.maven.releases</id>
+      <name>Data Conservancy Public Maven 2 Repository (releases)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/public/releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>dc.maven.stage.releases</id>
+      <name>Data Conservancy Public Maven 2 Repository (staging)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/stage/stage/releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>dc.maven.snapshots</id>
+      <name>Data Conservancy Public Maven 2 Repository (snapshots)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/public/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>dc.maven.private.releases</id>
+      <name>Data Conservancy Private Maven 2 Repository (releases)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/private/releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>dc.maven.private.snapshots</id>
+      <name>Data Conservancy Private Maven 2 Repository (snapshots)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/private/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+  </repositories>
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>dc.maven.plugins.releases</id>
+      <name>Data Conservancy Public Maven 2 Repository (releases)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/public/releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    
+    <pluginRepository>
+      <id>dc.maven.plugins.snapshots</id>
+      <name>Data Conservancy Public Maven 2 Repository (snapshots)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/public/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <!--distributionManagement>
+
+    <repository>
+      <id>dc.public.releases</id>
+      <name>Data Conservancy Public Maven 2 Repository Server (releases)</name>
+      <url>scp://maven.dataconservancy.org/data/maven-dc/public/releases/</url>
+    </repository>
+
+    <snapshotRepository>
+      <id>dc.public.snapshots</id>
+      <name>Data Conservancy Public Maven 2 Repository Server (snapshots)</name>
+      <url>scp://maven.dataconservancy.org/data/maven-dc/public/snapshots/</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+    
+    <site>
+      <id>dc.public.sites</id>
+      <name>Data Conservancy Public Maven 2 Web Sites</name>
+      <url>scp://maven.dataconservancy.org/data/maven-dc/sites/</url>
+    </site>
+
+  </distributionManagement-->
+  
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.3.2</version>
+          <configuration>
+           <stagingRepository>
+             dc.public.staging::default::scp://maven.dataconservancy.org/data/maven-dc/stage/releases/
+           </stagingRepository>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>2.4</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+<distributionManagement>
+    <snapshotRepository>
+        <id>sead-repo-snapshot</id>
+        <name>seadva-test.d2i.indiana.edu-snapshots</name>
+        <url>http://seadva-test.d2i.indiana.edu:8081/artifactory/ext-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+</project>

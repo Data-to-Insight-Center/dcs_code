@@ -1,0 +1,48 @@
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" >
+            <!-- Resource Map (ReM) description -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/ORE-REM/d09dcb2d-9ec3-4b3d-a3cb-c133d936c599-ReM.xml">
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+                <ore:describes rdf:resource="urn:uuid:d09dcb2d-9ec3-4b3d-a3cb-c133d936c599"/>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:modified>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:created>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>Tim DiLauro</foaf:name>
+                    <foaf:mbox rdf:resource="mailto:timmo@jhu.edu"/>
+                </dcterms:creator>
+            </rdf:Description>
+            
+            <!-- Aggregation -->
+            <rdf:Description rdf:about="urn:uuid:d09dcb2d-9ec3-4b3d-a3cb-c133d936c599">
+                <!-- Aggregation Description -->
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+                <rdf:type rdf:resource="http://dataconservancy.org/ns/types/DataItem"/>
+                <dc:title>data/ELOKA/ELOKA002/Johnassie_Ippak/Map_Ippak_Sea_Ice_Photo_Locations.pdf</dc:title>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-20T17:55:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-20T17:55:00Z</dcterms:modified>
+                    
+                <!-- Aggregated Aggregations - Resource Component -->
+                    
+                <!-- Aggregated Bytestreams -->
+                <ore:aggregates rdf:resource="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Johnassie_Ippak/Map_Ippak_Sea_Ice_Photo_Locations.pdf"/>
+            </rdf:Description>
+                
+            <!-- Aggregated Aggregations - ReM Component -->
+                    
+            <!-- Bytestream Descriptions -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Johnassie_Ippak/Map_Ippak_Sea_Ice_Photo_Locations.pdf">
+                <dcterms:identifier>urn:uuid:de724bd2-d12b-11e2-aee4-ca30f021666a</dcterms:identifier>
+                <dcterms:conformsTo>info:pronom/fmt/18</dcterms:conformsTo>
+                <dc:title>data/ELOKA/ELOKA002/Johnassie_Ippak/Map_Ippak_Sea_Ice_Photo_Locations.pdf</dc:title>
+                <dc:description>data/ELOKA/ELOKA002/Johnassie_Ippak/Map_Ippak_Sea_Ice_Photo_Locations.pdf</dc:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-20T17:55:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-20T17:55:00Z</dcterms:modified>
+            </rdf:Description>
+        </rdf:RDF>

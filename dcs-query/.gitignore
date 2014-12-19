@@ -1,0 +1,10 @@
+.svn
+target/
+*.iws
+*.ipr
+*.iml
+.idea
+*.swp
+*.log
+.DS_Store
+*.xpr

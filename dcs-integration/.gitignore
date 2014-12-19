@@ -1,0 +1,13 @@
+.svn
+*.iml
+*.ipr
+*.iws
+.idea
+target/
+*.swp
+*.log
+.DS_Store
+*.xpr
+.classpath
+.project
+.settings

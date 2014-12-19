@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+  xmlns:owl="http://www.w3.org/2002/07/owl#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:dcterms="http://purl.org/dc/terms/" 
+  xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+  xmlns:ore="http://www.openarchives.org/ore/terms/" 
+  xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" 
+  xmlns:datacons="http://example.com/datacons/"
+  xmlns:dcmitype="http://purl.org/dc/terms/dcmitype/">
+  
+  <!-- 
+    A simple ReM that is composed of two files.
+    
+    The ReM description (urn:uuid:1) describes the ORE aggregation (urn:uuid:2).
+    
+    The ORE aggregation (urn:uuid:2) aggregates two other resources (urn:uuid:3, 
+    urn:uuid:4) which are included in the second file, 'test-multiple-rems-01.xml'.
+    
+    There are no orphaned resources in this graph. 'urn:uuid:1' is the sole root.
+  -->
+  
+  <!-- Resource Map (ReM) description -->
+  <rdf:Description rdf:about="urn:uuid:1">
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+    <dc:title>A Resource Map</dc:title>
+    <ore:describes rdf:resource="urn:uuid:2"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T09:32:18Z</dcterms:modified>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T09:32:18Z</dcterms:created>
+    <dcterms:creator rdf:parseType="Resource">
+      <foaf:name>Elliot Metsger</foaf:name>
+      <foaf:mbox rdf:resource="mailto:dc-ird@googlegroups.com"/>
+    </dcterms:creator>
+  </rdf:Description>
+  
+  <!-- Aggregation -->
+  <rdf:Description rdf:about="urn:uuid:2">
+    <!-- Aggregation Description -->
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+    <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Collection"/>
+    <dc:title>Sample Aggregation</dc:title>
+    <dcterms:creator rdf:parseType="Resource">
+      <foaf:name>Data Conservancy</foaf:name>
+      <foaf:page rdf:resource="http://dataconservancy.org/"/>
+    </dcterms:creator>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T11:26Z</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-26T11:26Z</dcterms:modified>
+    
+    <!-- Aggregated Aggregations - Resource Component -->
+    <ore:aggregates rdf:resource="urn:uuid:3"/>
+    <ore:aggregates rdf:resource="urn:uuid:4"/>
+    <ore:isDescribedBy rdf:resource="file:///test-multiple-rems-01.xml"/>
+    
+  </rdf:Description>
+  
+</rdf:RDF>

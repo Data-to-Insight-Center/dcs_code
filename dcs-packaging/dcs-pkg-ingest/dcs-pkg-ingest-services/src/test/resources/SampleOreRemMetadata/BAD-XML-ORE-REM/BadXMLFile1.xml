@@ -1,0 +1,54 @@
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" xmlns:datacons="http://example.com/datacons/">
+            <!-- Resource Map (ReM) description -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/ORE-REM/3ae15e08-e282-4435-9c95-1f65a6345ecf-ReM.xml">
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+                <ore:describes rdf:resource="urn:uuid:3ae15e08-e282-4435-9c95-1f65a6345ecf"/>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:modified>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:created>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>Tim DiLauro</foaf:name>
+                    <foaf:mbox rdf:resource="mailto:timmo@jhu.edu"/>
+                </dcterms:creator>
+            </rdf:Description>
+            
+            <!-- Aggregation -->
+            <rdf:Description rdf:about="urn:uuid:3ae15e08-e282-4435-9c95-1f65a6345ecf">
+                <!-- Aggregation Description -->
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+                <rdf:type rdf:resource="http://example.com/datacons/DataItem"/>
+                <dc:title>data/ELOKA/ELOKA002/Map_Regional_Reference.pdf</dc:title>
+                <dcterms:identifier>DataItem:1</dcterms:identifier>
+                <dcterms:isPartOf>MOOOOOO</dcterms:isPartOf>
+                <dcterms:isVersionOf>MOOOOOO-old</dcterms:isVersionOf>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:mbox>eloka@eloka.org</foaf:mbox>
+                    <foaf:phone>555-555-5555</foaf:phone>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-20T17:55:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-20T17:55:00Z</dcterms:modified>
+                <dcterms:description>This is a sample DataItem description</dcterms:description>
+                <!-- Aggregated Aggregations - Resource Component -->
+                    
+                <!-- Aggregated Bytestreams -->
+                <ore:aggregates rdf:resource="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Map_Regional_Reference.pdf"/>
+            <!-- Commented out to create badly formed xml
+            </rdf:Description>-->
+                
+            <!-- Aggregated Aggregations - ReM Component -->
+                    
+            <!-- Bytestream Descriptions -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Map_Regional_Reference.pdf">
+                <dcterms:identifier>urn:uuid:de7246c8-d12b-11e2-aee4-d998d6ffb432</dcterms:identifier>
+                <dcterms:conformsTo>info:pronom/fmt/18</dcterms:conformsTo>
+                <dc:title>ELOKA002.bag/data/ELOKA/ELOKA002/Map_Regional_Reference.pdf</dc:title>
+                <dc:description>ELOKA002.bag/data/ELOKA/ELOKA002/Map_Regional_Reference.pdf</dc:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-20T17:55:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-20T17:55:00Z</dcterms:modified>
+            </rdf:Description>
+        </rdf:RDF>

@@ -1,0 +1,95 @@
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" >
+            <!-- Resource Map (ReM) description -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/ORE-REM/de726233-d12b-11e2-aee4-a0b4b916629f-ReM.xml">
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+                <ore:describes rdf:resource="urn:uuid:de726233-d12b-11e2-aee4-a0b4b916629f"/>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:modified>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:created>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>Tim DiLauro</foaf:name>
+                    <foaf:mbox rdf:resource="mailto:timmo@jhu.edu"/>
+                </dcterms:creator>
+            </rdf:Description>
+            
+            <!-- Aggregation -->
+            <rdf:Description rdf:about="urn:uuid:de726233-d12b-11e2-aee4-a0b4b916629f">
+                <!-- Aggregation Description -->
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+                <rdf:type rdf:resource="http://dataconservancy.org/ns/types/DataItem"/>
+                <dc:title>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview</dc:title>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-31T19:38:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-31T19:38:00Z</dcterms:modified>
+                    
+                <!-- Aggregated Aggregations - Resource Component -->
+                    
+                <!-- Aggregated Bytestreams -->
+                <ore:aggregates rdf:resource="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak1.mp4"/>
+                <ore:aggregates rdf:resource="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak2.mp4"/>
+                <ore:aggregates rdf:resource="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak3.mp4"/>
+                <ore:aggregates rdf:resource="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak4.mp4"/>
+                <ore:aggregates rdf:resource="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak5.mp4"/>
+            </rdf:Description>
+                
+            <!-- Aggregated Aggregations - ReM Component -->
+                    
+            <!-- Bytestream Descriptions -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak1.mp4">
+                <dcterms:conformsTo>info:pronom/fmt/199</dcterms:conformsTo>
+                <dc:title>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak1.mp4</dc:title>
+                <dc:description>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak1.mp4</dc:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-24T23:40:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-24T23:40:00Z</dcterms:modified>
+            </rdf:Description>
+            <rdf:Description rdf:about="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak2.mp4">
+                <dcterms:conformsTo>info:pronom/fmt/199</dcterms:conformsTo>
+                <dc:title>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak2.mp4</dc:title>
+                <dc:description>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak2.mp4</dc:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-25T00:27:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-25T00:27:00Z</dcterms:modified>
+            </rdf:Description>
+            <rdf:Description rdf:about="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak3.mp4">
+                <dcterms:conformsTo>info:pronom/fmt/199</dcterms:conformsTo>
+                <dc:title>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak3.mp4</dc:title>
+                <dc:description>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak3.mp4</dc:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-25T01:26:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-25T01:26:00Z</dcterms:modified>
+            </rdf:Description>
+            <rdf:Description rdf:about="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak4.mp4">
+                <dcterms:conformsTo>info:pronom/fmt/199</dcterms:conformsTo>
+                <dc:title>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak4.mp4</dc:title>
+                <dc:description>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak4.mp4</dc:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-25T02:09:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-25T02:09:00Z</dcterms:modified>
+            </rdf:Description>
+            <rdf:Description rdf:about="file:///ELOKA002.bag/data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak5.mp4">
+                <dcterms:conformsTo>info:pronom/fmt/199</dcterms:conformsTo>
+                <dc:title>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak5.mp4</dc:title>
+                <dc:description>data/ELOKA/ELOKA002/Lucassie_Takatak/Takatak_Interview/Takatak5.mp4</dc:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-25T18:03:00Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-03-25T18:03:00Z</dcterms:modified>
+            </rdf:Description>
+        </rdf:RDF>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2012 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- 
+    $Id: pom.xml 5852 2013-04-23 12:10:12Z emetsger $
+    $URL: https://scm.dataconservancy.org/svn/dcs-registry/branches/api-refactor/dcs-registry-query-support/pom.xml $
+  -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.dataconservancy.registry</groupId>
+  <artifactId>dcs-registry-query-support</artifactId>
+  <packaging>jar</packaging>
+  <name>Query Framework Support</name>
+  <description>Support classes for backing a registry using the DCS Query Framework</description>
+
+  <parent>
+    <groupId>org.dataconservancy.registry</groupId>
+    <artifactId>dcs-registry-parent</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+  </parent>
+
+  <!-- Modules  =================================================== -->
+
+  <modules>
+
+  </modules>
+
+  <!-- Build  ===================================================== -->
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-remote-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>generate-test-resources</phase>
+            <goals>
+              <goal>process</goal>
+            </goals>
+            <configuration>
+              <resourceBundles>
+                <resourceBundle>org.dataconservancy.index:dcs-index-dcp-solr-resources:1.1.0-SNAPSHOT</resourceBundle>
+              </resourceBundles>
+              <outputDirectory>${project.build.testOutputDirectory}</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <solr.solr.home>${project.build.testOutputDirectory}/org/dataconservancy/dcs/index/dcpsolr</solr.solr.home>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Dependency Management ====================================== -->
+
+  <dependencyManagement>
+
+  </dependencyManagement>
+
+  <!-- Dependencies =============================================== -->
+
+  <dependencies>
+    
+    <!-- Provided ================================================= -->    
+
+    <!-- Runtime ================================================== -->
+
+    <!-- Compile ================================================== -->
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dataconservancy.index</groupId>
+      <artifactId>dcs-index-solr-support</artifactId>
+      <scope>compile</scope>
+      <version>1.1.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dataconservancy.query</groupId>
+      <artifactId>dcs-query-api</artifactId>
+      <scope>compile</scope>
+      <version>1.1.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dataconservancy.registry</groupId>
+      <artifactId>dcs-registry-api</artifactId>
+      <scope>compile</scope>
+      <version>${pom.parent.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dataconservancy.profile</groupId>
+      <artifactId>dcs-profile-api</artifactId>
+      <scope>compile</scope>
+      <version>1.1.0-SNAPSHOT</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.dataconservancy.access</groupId>
+      <artifactId>dcs-access-connector</artifactId>
+      <scope>compile</scope>
+      <version>1.1.0-SNAPSHOT</version>
+    </dependency>
+
+    <!-- Test ===================================================== -->
+    
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.8.5</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <artifactId>solr-core</artifactId>
+      <groupId>org.apache.solr</groupId>
+      <version>3.6.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.dataconservancy.index</groupId>
+      <artifactId>dcs-index-api</artifactId>
+      <version>1.1.0-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+  
+    <dependency>
+      <groupId>org.dataconservancy.registry</groupId>
+      <artifactId>dcs-registry-license-shared</artifactId>
+      <version>${pom.parent.version}</version>
+      <scope>test</scope>
+    </dependency>        
+    
+    <dependency>
+      <groupId>org.dataconservancy.query</groupId>
+      <artifactId>dcs-query-dcs-datamodel-solr</artifactId>
+      <version>1.1.0-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.dataconservancy.dcs</groupId>
+      <artifactId>dcs-common-util-stream-fs</artifactId>
+      <scope>test</scope>
+      <version>1.1.0-SNAPSHOT</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.dataconservancy.dcs</groupId>
+      <artifactId>dcs-common-util-stream-api</artifactId>
+      <scope>test</scope>
+      <version>1.1.0-SNAPSHOT</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.dataconservancy.registry</groupId>
+      <artifactId>dcs-registry-test</artifactId>
+      <scope>test</scope>
+      <version>${pom.parent.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.4</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>3.0.5.RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

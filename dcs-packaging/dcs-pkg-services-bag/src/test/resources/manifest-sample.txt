@@ -1,0 +1,8 @@
+00AF520 text.txt
+8248921 sample.txt
+2385981 demo.txt
+3257897 sample.zip
+5379139 dummydata
+3280328 foo.xml
+3820200 folder/data.txt
+2380280 duck/duck/goose.data

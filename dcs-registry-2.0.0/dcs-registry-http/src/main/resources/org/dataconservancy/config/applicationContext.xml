@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2012 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!--
+   | This Application Context is responsible for wiring the beans provided by the dcs-registry-http module.  It is
+   | resolved on the classpath using the construct "classpath*:/org/dataconservancy/config" by the dcs-registry-webapp
+   | (configured in web.xml)
+   +-->
+
+  <!--
+   | The registry service, which executes the business logic.  Invoked by the RegistryController
+   +-->
+  <bean id="registryService" class="org.dataconservancy.registry.http.RegistryService">
+    <constructor-arg>
+      <map>
+        <entry key="type:foo" value-ref="licenseRegistry"/>
+        <entry key-ref="metadataRegistryType" value-ref="metadataRegistry"/>
+      </map>
+    </constructor-arg>
+  </bean>
+
+  <!--
+   | A sample Registry instance of licenses, using an in-memory implementation.
+   | (Note: these sample registries will be removed in a later card, and replaced with bona fide
+   | registries backed by the archive.)
+   +-->
+  <bean id="licenseRegistry" class="org.dataconservancy.registry.shared.memory.InMemoryRegistry">
+    <constructor-arg value="type:foo"/>
+    <property name="entries">
+      <map>
+        <!--
+        String id, T entry, String entryType, Collection<String> keys, String description
+        -->
+        <entry key="http://localhost:8080/registry/entry/1">
+          <bean class="org.dataconservancy.registry.api.support.BasicRegistryEntryImpl">
+            <constructor-arg value="http://localhost:8080/registry/entry/1"/>
+            <constructor-arg ref="dcsLicense"/>
+            <constructor-arg value="type:foo"/>
+            <constructor-arg>
+              <list>
+                <value>http://localhost:8080/registry/entry/1</value>
+                <value>http://www.license.com</value>
+              </list>
+            </constructor-arg>
+            <constructor-arg value="A registry entry of a sample license"/>
+          </bean>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <!--
+   | A sample license
+   +-->
+  <bean id="dcsLicense" class="org.dataconservancy.registry.impl.license.shared.DcsLicense">
+    <property name="fullText" value="This is the full text of the license"/>
+    <property name="name" value="This is the name of the license"/>
+    <property name="summary" value="This is the license summary"/>
+    <property name="tag" value="This is the license tag"/>
+    <property name="uris">
+      <set>
+        <value>http://www.license.com</value>
+      </set>
+    </property>
+    <property name="version" value="1.0"/>
+  </bean>
+
+  <!--
+   | A sample Registry instance of Metadata Schemes, using an in-memory implementation.
+   | (Note: these sample registries will be removed in a later card, and replaced with bona fide
+   | registries backed by the archive.)
+   +-->
+  
+  <bean id="metadataRegistryType" class="java.lang.String">
+    <constructor-arg value="dataconservancy.types:registry-entry:metadatascheme"/>
+  </bean>
+  
+  <bean id="fgdcSchemaUrl" class="java.lang.String">
+    <constructor-arg value="http://www.fgdc.gov/schemas/metadata/fgdc-std-001-1998.xsd"/>
+  </bean>
+  
+  <bean id="metadataRegistry" class="org.dataconservancy.registry.shared.memory.InMemoryRegistry">
+    <constructor-arg ref="metadataRegistryType"/>
+    <property name="entries">
+      <map>
+        <entry key-ref="fgdcSchemaUrl">
+          <bean class="org.dataconservancy.registry.api.support.BasicRegistryEntryImpl">
+            <constructor-arg ref="fgdcSchemaUrl"/>
+            <constructor-arg ref="fgdcMetadataScheme"/>
+            <constructor-arg ref="metadataRegistryType"/>
+            <constructor-arg>
+              <list>
+                <ref bean="fgdcSchemaUrl"/>
+              </list>
+            </constructor-arg>
+            <constructor-arg value="A registry entry of a fgdc schema"/>
+          </bean>
+        </entry>
+      </map>
+    </property>
+  </bean>
+  
+  <!--
+   | A sample FGDC Metadata Scheme 
+   +-->
+  <bean id="fgdcMetadataScheme" class="org.dataconservancy.registry.impl.metadata.shared.DcsMetadataScheme">
+    <property name="name" value="FGDC"/>
+    <property name="schemaVersion" value="20030801"/>
+    <property name="schemaUrl" ref="fgdcSchemaUrl"/>
+    <property name="source" value="http://www.google.com"/>
+  </bean>
+
+</beans>

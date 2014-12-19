@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <!-- 
+    $Id: pom.xml 4462 2012-08-31 02:20:42Z emetsger $
+    $URL: https://scm.dataconservancy.org/svn/maven/supplemental-resources/pom.xml $
+  -->
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.dataconservancy</groupId>
+  <artifactId>supplemental-resources</artifactId>
+  <packaging>jar</packaging>
+  <version>1.1.0-SNAPSHOT</version>
+  <name>Supplemental project information</name>
+  <description>Contains supplemental project information for POMs that have incomplete metadata, such as licence information, project names, and urls.</description>
+  
+  <url>http://maven.dataconservancy.org/sites/supplemental-resources/</url>
+    
+  <parent>
+    <groupId>org.dataconservancy</groupId>
+    <artifactId>project-pom</artifactId>
+    <version>1.1.0-SNAPSHOT</version>
+  </parent>
+
+<distributionManagement>
+    <snapshotRepository>
+        <id>sead-repo-snapshot</id>
+        <name>seadva-test.d2i.indiana.edu-snapshots</name>
+        <url>http://seadva-test.d2i.indiana.edu:8081/artifactory/ext-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
+  
+</project>

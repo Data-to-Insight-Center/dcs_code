@@ -1,0 +1,67 @@
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+            xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+            xmlns:owl="http://www.w3.org/2002/07/owl#" 
+            xmlns:dc="http://purl.org/dc/elements/1.1/" 
+            xmlns:dcterms="http://purl.org/dc/terms/" 
+            xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+            xmlns:ore="http://www.openarchives.org/ore/terms/" 
+            xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" 
+            >
+            
+            <!-- Resource Map (ReM) description -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/ORE-REM/243A4C7A-CA89-4BA5-99D3-1E26D7C31DD8-ReM.xml">
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+                <ore:describes rdf:resource="urn:uuid:243A4C7A-CA89-4BA5-99D3-1E26D7C31DD8"/>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:modified>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:created>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>Tim DiLauro</foaf:name>
+                    <foaf:mbox rdf:resource="mailto:timmo@jhu.edu"/>
+                </dcterms:creator>
+            </rdf:Description>
+            
+            <!-- Aggregation -->
+            <!-- Some elements added for testing purposes -->
+            <rdf:Description rdf:about="urn:uuid:243A4C7A-CA89-4BA5-99D3-1E26D7C31DD8">
+                <!-- Aggregation Description -->
+                <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+                <rdf:type rdf:resource="http://dataconservancy.org/ns/types/Project"/>
+                <dc:title>The ELOKA Project</dc:title>
+                <dcterms:identifier>Project:1</dcterms:identifier>
+                <dcterms:description>This is a sample Project description</dcterms:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:mbox>eloka@eloka.org</foaf:mbox>
+                    <foaf:phone>555-555-5555</foaf:phone>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:modified>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-10T01:55:18Z</dcterms:created>                
+    
+                <!-- Aggregated Aggregations - Resource Component -->
+                <ore:aggregates rdf:resource="urn:uuid:de7243bc-d12b-11e2-aee4-90a790b0b17a"/>
+                    
+                <!-- Aggregated Bytestreams -->
+                <ore:aggregates rdf:resource="file:///ELOKA002.bag/data/ELOKA/ELOKA-project.bop.xml"/>
+            </rdf:Description>
+                
+            <!-- Aggregated Aggregations - ReM Component -->
+            <rdf:Description rdf:about="urn:uuid:de7243bc-d12b-11e2-aee4-90a790b0b17a">
+                <ore:isDescribedBy rdf:resource="file:///ELOKA002.bag/ORE-REM/de7243bc-d12b-11e2-aee4-90a790b0b17a-ReM.xml"/>
+            </rdf:Description>
+                    
+            <!-- Bytestream Descriptions -->
+            <rdf:Description rdf:about="file:///ELOKA002.bag/data/ELOKA/ELOKA-project.bop.xml">
+                <dcterms:identifier>file:///ELOKA002.bag/data/ELOKA/ELOKA-project.bop.xml</dcterms:identifier>
+                <fedora-rels-ext:isMetadataFor>urn:uuid:243A4C7A-CA89-4BA5-99D3-1E26D7C31DD8</fedora-rels-ext:isMetadataFor>
+                <dcterms:conformsTo>http://dataconservancy.org/schemas/bop/1.0</dcterms:conformsTo>
+                <dc:title>ELOKA002.bag/data/ELOKA/ELOKA-project.bop.xml</dc:title>
+                <dc:description>ELOKA002.bag/data/ELOKA/ELOKA-project.bop.xml</dc:description>
+                <dcterms:creator rdf:parseType="Resource">
+                    <foaf:name>The ELOKA Project</foaf:name>
+                    <foaf:page rdf:resource="http://eloka-arctic.org/"/>
+                </dcterms:creator>
+                <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-09T15:47:32Z</dcterms:created>
+                <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-09T15:47:32Z</dcterms:modified>
+            </rdf:Description>
+        </rdf:RDF>
