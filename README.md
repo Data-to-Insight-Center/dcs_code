@@ -27,4 +27,6 @@
         <module>dcs-integration</module>
         <module>dcs-ui</module>
 
-4. We have changed the <distributionManagement> section in the parent pom.
+4. We have changed the distributionManagement section in the parent pom.
+5. After building this, we have to build sead/DataConservencyCode modules and deploy them. That is 
+because there are some patches applied to those modules which are needed in SEAD VA code.
